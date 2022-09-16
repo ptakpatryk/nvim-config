@@ -12,8 +12,8 @@ vim.g.maplocalleader = " "
 -- cancel on ctrl + c
 keymap("i", "<C+c>", "<Esc>", opts)
 
--- :Lexplore tree shortcut
-keymap("n", "<leader>e", ":Lex 25<cr>", opts)
+-- :Nvim-tree shortcut
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Resize with arrows (doesnt work on mac tho...)
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
