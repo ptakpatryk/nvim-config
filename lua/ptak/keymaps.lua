@@ -45,6 +45,9 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Alt + k
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>p", ":Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+
+-- Format
+keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)

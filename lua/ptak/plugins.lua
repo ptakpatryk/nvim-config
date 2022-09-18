@@ -42,19 +42,20 @@ packer.init({
 return packer.startup(function(use)
   -- My plugins here
 
-  use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
-  use({ "RRethy/vim-illuminate" }) -- illuminates other keywords when cursor is hovering over
-  use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-  use({ "numToStr/Comment.nvim" })
-  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-  use({ "kyazdani42/nvim-web-devicons" })
-  use({ "kyazdani42/nvim-tree.lua" })
-  use({ "akinsho/bufferline.nvim" })
-  use({ "moll/vim-bbye" })
+  use({ 'wbthomason/packer.nvim' }) -- Have packer manage itself
+  use({ 'nvim-lua/plenary.nvim' }) -- Useful lua functions used by lots of plugins
+  use({ 'RRethy/vim-illuminate' }) -- illuminates other keywords when cursor is hovering over
+  use({ 'windwp/nvim-autopairs' }) -- Autopairs, integrates with both cmp and treesitter
+  use({ 'numToStr/Comment.nvim' })
+  use({ 'JoosepAlviste/nvim-ts-context-commentstring' })
+  use({ 'kyazdani42/nvim-web-devicons' })
+  use({ 'kyazdani42/nvim-tree.lua' })
+  use({ 'akinsho/bufferline.nvim' })
+  use({ 'moll/vim-bbye' })
   use { 'nvim-lualine/lualine.nvim' }
   use { 'tpope/vim-surround' }
-  use({ "akinsho/toggleterm.nvim" })
+  use({ 'akinsho/toggleterm.nvim' })
+  use({ 'simrat39/rust-tools.nvim' })
   -- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
   -- use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
   -- use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
