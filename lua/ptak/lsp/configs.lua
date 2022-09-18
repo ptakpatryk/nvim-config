@@ -13,10 +13,10 @@ local servers = {
   "graphql",
   "html",
   "cssmodules_ls",
+  "rust_analyzer",
   -- "efm",
   -- "grammarly",
   -- "rome",
-  -- "rust_analyzer",
   -- "stylelint_lsp"
 }
 
