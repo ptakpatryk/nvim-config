@@ -33,6 +33,7 @@ keymap("n", "<A-Right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>bd", ":Bdelete! <CR>", opts)
+keymap("n", "<leader>w", ":Bdelete! <CR>", opts)
 
 --[[ VISUAL MODE ]]
 -- Stay in visual when indenting
