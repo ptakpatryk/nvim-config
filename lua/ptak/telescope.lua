@@ -22,5 +22,12 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+    pickers = {
+      live_grep = {
+        additional_args = function()
+          return {"--hidden"}
+        end
+      },
+    },
   },
 }

@@ -30,8 +30,10 @@ keymap("n", "<A-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+--[[ keymap("n", "<S-l>", ":bnext<CR>", opts) ]]
+--[[ keymap("n", "<S-h>", ":bprevious<CR>", opts) ]]
+keymap("n", "<leader>bn", ":bnext<CR>", opts)
+keymap("n", "<leader>bp", ":bprevious<CR>", opts)
 keymap("n", "<leader>bd", ":Bdelete! <CR>", opts)
 keymap("n", "<leader>w", ":Bdelete! <CR>", opts)
 
@@ -49,6 +51,8 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>p", ":Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
+keymap("i", "<C-q>", "actions.smart_add_to_qflist + actions.open_qflist", opts)
 
 -- Format
 keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)

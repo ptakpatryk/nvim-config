@@ -14,10 +14,10 @@ local servers = {
   "html",
   "cssmodules_ls",
   "rust_analyzer",
-  -- "efm",
-  -- "grammarly",
-  -- "rome",
-  -- "stylelint_lsp"
+  --[[ "emmet_ls", ]]
+  "rome",
+  "stylelint_lsp",
+  "omnisharp"
 }
 
 lsp_installer.setup({
