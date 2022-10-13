@@ -1,0 +1,6 @@
+{
+  "export * from": {
+    "prefix": "exall",
+    "body": "export * from './${1:name}'"
+  }
+}

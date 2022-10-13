@@ -9,6 +9,9 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+--[[ require("luasnip/loaders/from_vscode").load({ paths = { "./custom-snippets/my-js-snippets.json" }}) ]]
+
+luasnip.filetype_extend("javascript", { "javascriptreact" });
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
