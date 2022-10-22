@@ -16,5 +16,5 @@ require "ptak.gitsigns"
 require "ptak.nvim-tree"
 require "ptak.bufferline"
 require "ptak.toggleterm"
-require "ptak.rust-tools"
+--[[ require "ptak.rust-tools" ]]
 require "ptak.autocmd"
