@@ -17,7 +17,8 @@ local servers = {
   --[[ "emmet_ls", ]]
   "rome",
   "stylelint_lsp",
-  "omnisharp"
+  --[[ "omnisharp", ]]
+  "taplo"
 }
 
 lsp_installer.setup({
