@@ -12,6 +12,8 @@ require("luasnip/loaders/from_vscode").lazy_load()
 --[[ require("luasnip/loaders/from_vscode").load({ paths = { "./custom-snippets/my-js-snippets.json" }}) ]]
 
 luasnip.filetype_extend("javascript", { "javascriptreact" });
+luasnip.filetype_extend("javascript", { "typescript" });
+luasnip.filetype_extend("typescript", { "javascript" });
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
