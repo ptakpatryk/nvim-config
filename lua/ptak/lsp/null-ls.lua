@@ -11,9 +11,9 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		--[[ formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }), ]]
-		formatting.eslint,
-		--[[ formatting.black.with({ extra_args = { "--fast" } }), ]]
+    -- Webdev
+		formatting.eslint_d,
+    diagnostics.eslint_d,
+    -- Lua
 		formatting.stylua,
-    --[[ diagnostics.eslint, ]]
 	}, })
