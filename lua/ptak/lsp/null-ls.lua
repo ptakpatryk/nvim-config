@@ -15,5 +15,5 @@ null_ls.setup({
 		formatting.eslint_d,
     diagnostics.eslint_d,
     -- Lua
-		formatting.stylua,
+		--[[ formatting.stylua, ]]
 	}, })

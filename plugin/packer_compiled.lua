@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -158,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-neoclip.lua"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -203,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

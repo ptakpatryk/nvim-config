@@ -11,10 +11,11 @@ require "ptak.treesitter-context"
 require "ptak.autopairs"
 require "ptak.comments"
 require "ptak.web-devicons"
+require "ptak.neoclip"
 require "ptak.telescope"
 require "ptak.gitsigns"
 require "ptak.nvim-tree"
 require "ptak.bufferline"
 require "ptak.toggleterm"
---[[ require "ptak.rust-tools" ]]
 require "ptak.autocmd"
+--[[ require "ptak.indent_blankline" ]]

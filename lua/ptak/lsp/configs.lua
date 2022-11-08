@@ -6,13 +6,14 @@ end
 local lspconfig = require("lspconfig")
 
 local servers = {
+  "tailwindcss",
   "jsonls",
   "sumneko_lua",
   "tsserver",
   "graphql",
   "html",
   "rust_analyzer",
-  "stylelint_lsp",
+  --[[ "stylelint_lsp", ]]
   --[[ "omnisharp", ]]
   "taplo",
   "bashls",

@@ -53,6 +53,7 @@ keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("i", "<C-q>", "actions.smart_add_to_qflist + actions.open_qflist", opts)
+keymap("n", "<leader>n", ":Telescope neoclip unnamed extra=plus<CR>", opts)
 
 -- Format
 keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)

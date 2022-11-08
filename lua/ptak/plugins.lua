@@ -52,18 +52,18 @@ return packer.startup(function(use)
   use({ 'kyazdani42/nvim-tree.lua' })
   use({ 'akinsho/bufferline.nvim' })
   use({ 'moll/vim-bbye' })
-  use { 'nvim-lualine/lualine.nvim' }
-  use { 'tpope/vim-surround' }
+  use({ 'nvim-lualine/lualine.nvim' })
+  use({ 'tpope/vim-surround' })
   use({ 'akinsho/toggleterm.nvim' })
   use({ 'simrat39/rust-tools.nvim' })
   -- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
   -- use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
-  -- use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
   use({ "goolord/alpha-nvim" })
   -- use("folke/which-key.nvim")
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim"})
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
@@ -84,6 +84,9 @@ return packer.startup(function(use)
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = 'make' })
+  use({ "AckslD/nvim-neoclip.lua", requires = { { 'nvim-telescope/telescope.nvim' } } })
+
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter" })
