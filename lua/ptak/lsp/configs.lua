@@ -6,7 +6,6 @@ end
 local lspconfig = require("lspconfig")
 
 local servers = {
-  "tailwindcss",
   "jsonls",
   "sumneko_lua",
   "tsserver",
@@ -17,7 +16,9 @@ local servers = {
   --[[ "omnisharp", ]]
   "taplo",
   "bashls",
-  "sqlls"
+  "sqlls",
+  "marksman",
+  "tailwindcss",
 }
 
 lsp_installer.setup({
