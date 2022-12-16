@@ -43,8 +43,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Alt + j
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Alt + k
+keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- Alt + j
+keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- Alt + k
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope
