@@ -50,37 +50,39 @@ return packer.startup(function(use)
   use({ 'JoosepAlviste/nvim-ts-context-commentstring' })
   use({ 'kyazdani42/nvim-web-devicons' })
   use({ 'kyazdani42/nvim-tree.lua' })
-  use({ 'akinsho/bufferline.nvim' })
+  use({ 'mbbill/undotree' }) -- visualizes the undo history and makes it easy to browse and switch between different undo branches
   use({ 'moll/vim-bbye' })
   use({ 'nvim-lualine/lualine.nvim' })
   use({ 'tpope/vim-surround' })
-  use({ 'akinsho/toggleterm.nvim' })
   use({ 'simrat39/rust-tools.nvim' })
-  -- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
-  -- use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
   use({ "goolord/alpha-nvim" })
-  -- use("folke/which-key.nvim")
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })
-  use({ "lukas-reineke/indent-blankline.nvim"})
+  use({ "lukas-reineke/indent-blankline.nvim" })
 
-  -- cmp plugins
-  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-  use({ "hrsh7th/cmp-path" }) -- path completions
-  use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-  use({ "hrsh7th/cmp-nvim-lsp" })
-  use({ "hrsh7th/cmp-nvim-lua" })
+  -- ZERO LSP
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
 
-  -- snippets
-  use({ "L3MON4D3/LuaSnip" }) --snippet engine
-  use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lua" },
 
-  -- LSP
-  use({ "neovim/nvim-lspconfig" }) -- enable LSP
-  use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
-  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
+    }
+  }
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })

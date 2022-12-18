@@ -3,16 +3,32 @@ if not status_ok then
   return
 end
 
+local function is_whitespace(line)
+  return vim.fn.match(line, [[^\s*$]]) ~= -1
+end
+
+local function all(tbl, check)
+  for _, entry in ipairs(tbl) do
+    if not check(entry) then
+      return false
+    end
+  end
+  return true
+end
+
 neoclip.setup({
   history = 1000,
   enable_persistent_history = false,
   length_limit = 1048576,
   continuous_sync = false,
   --[[ db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3", ]]
-  filter = nil,
+  -- filters out white spaces
+  filter = function(data)
+    return not all(data.event.regcontents, is_whitespace)
+  end,
   preview = true,
   prompt = nil,
-  default_register = {'"', '+'},
+  default_register = { '"', '+' },
   --[[ default_register_macros = 'q', ]]
   enable_macro_history = true,
   content_spec_column = false,
