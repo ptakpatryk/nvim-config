@@ -8,6 +8,11 @@ if not snip_status_ok then
   return
 end
 
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
+  return
+end
+
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -47,23 +52,6 @@ lsp.ensure_installed({
 })
 
 lsp.nvim_workspace()
-lsp.setup_nvim_cmp({
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
-    end,
-  },
-})
 
 luasnip.filetype_extend("javascript", { "javascriptreact" });
 luasnip.filetype_extend("javascript", { "typescript" });
@@ -90,6 +78,43 @@ lsp.on_attach(function(client, bufnr)
   keymap("n", "<leader>vrn", vim.lsp.buf.rename, opts)
   keymap("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
+
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+  --[[ ['<C-Space>'] = cmp.mapping.complete(), ]]
+  ['<C-e>'] = cmp.mapping.abort(),
+})
+
+lsp.setup_nvim_cmp({
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
+  mapping = cmp_mappings,
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  },
+  --[[ window = { ]]
+  --[[   documentation = cmp.config.window.bordered(), ]]
+  --[[   completion = cmp.config.window.bordered(), ]]
+  --[[   winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None', ]]
+  --[[ } ]]
+})
+
 
 lsp.setup()
 

@@ -55,7 +55,9 @@ return packer.startup(function(use)
   use({ 'nvim-lualine/lualine.nvim' })
   use({ 'tpope/vim-surround' })
   use({ 'simrat39/rust-tools.nvim' })
-  use({ "goolord/alpha-nvim" })
+  use({ 'goolord/alpha-nvim' })
+  use({ 'akinsho/bufferline.nvim' })
+  use({ 'styled-components/vim-styled-components' })
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })

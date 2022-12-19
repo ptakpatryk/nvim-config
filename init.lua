@@ -15,4 +15,4 @@ require "ptak.telescope"
 require "ptak.gitsigns"
 require "ptak.nvim-tree"
 require "ptak.undotree"
---[[ require "ptak.indent_blankline" ]]
+require "ptak.bufferline"
