@@ -16,3 +16,5 @@ require "ptak.gitsigns"
 require "ptak.nvim-tree"
 require "ptak.undotree"
 require "ptak.bufferline"
+require "ptak.fidget"
+--[[ require "ptak.dap" ]]

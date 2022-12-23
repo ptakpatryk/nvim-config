@@ -63,6 +63,9 @@ return packer.startup(function(use)
   use({ "folke/tokyonight.nvim" })
   use({ "lukas-reineke/indent-blankline.nvim" })
 
+  -- Debugger
+  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap"  }})
+
   -- ZERO LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -85,6 +88,9 @@ return packer.startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
+  -- LSP Loading status
+  --[[ use({ 'arkav/lualine-lsp-progress'}) ]]
+  use({ "j-hui/fidget.nvim" })
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })

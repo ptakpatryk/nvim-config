@@ -81,7 +81,6 @@ end)
 
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-  --[[ ['<C-Space>'] = cmp.mapping.complete(), ]]
   ['<C-e>'] = cmp.mapping.abort(),
 })
 
