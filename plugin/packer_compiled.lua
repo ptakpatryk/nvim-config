@@ -179,10 +179,25 @@ _G.packer_plugins = {
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
+  ["nvim-dap-vscode-js"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
+    url = "https://github.com/mxsdev/nvim-dap-vscode-js"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-neoclip.lua"] = {
     loaded = true,
@@ -199,11 +214,6 @@ _G.packer_plugins = {
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
@@ -219,6 +229,11 @@ _G.packer_plugins = {
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["overseer.nvim"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -233,6 +248,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
+  },
+  ["telescope-dapzzzz"] = {
+    loaded = true,
+    path = "/Users/ptak/.local/share/nvim/site/pack/packer/start/telescope-dapzzzz",
+    url = "https://github.com/HUAHUAI23/telescope-dapzzzz"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
