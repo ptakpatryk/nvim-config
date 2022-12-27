@@ -50,37 +50,58 @@ return packer.startup(function(use)
   use({ 'JoosepAlviste/nvim-ts-context-commentstring' })
   use({ 'kyazdani42/nvim-web-devicons' })
   use({ 'kyazdani42/nvim-tree.lua' })
-  use({ 'akinsho/bufferline.nvim' })
+  use({ 'mbbill/undotree' }) -- visualizes the undo history and makes it easy to browse and switch between different undo branches
   use({ 'moll/vim-bbye' })
   use({ 'nvim-lualine/lualine.nvim' })
   use({ 'tpope/vim-surround' })
-  use({ 'akinsho/toggleterm.nvim' })
   use({ 'simrat39/rust-tools.nvim' })
-  -- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
-  -- use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
-  use({ "goolord/alpha-nvim" })
-  -- use("folke/which-key.nvim")
+  use({ 'goolord/alpha-nvim' })
+  use({ 'akinsho/bufferline.nvim' })
+  use({ 'styled-components/vim-styled-components' })
+
+  -- winbar
+  use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })
-  use({ "lukas-reineke/indent-blankline.nvim"})
+  use({ "lukas-reineke/indent-blankline.nvim" })
 
-  -- cmp plugins
-  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-  use({ "hrsh7th/cmp-path" }) -- path completions
-  use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-  use({ "hrsh7th/cmp-nvim-lsp" })
-  use({ "hrsh7th/cmp-nvim-lua" })
+  -- Debugger
+  use({ "mfussenegger/nvim-dap" })
+  use({ "rcarriga/nvim-dap-ui" })
+  use({ "theHamsta/nvim-dap-virtual-text" })
+  use({ "nvim-telescope/telescope-dap.nvim" })
+  use({ "mxsdev/nvim-dap-vscode-js" })
+  use({ "HUAHUAI23/telescope-dapzzzz" })
+  -- Built-in support for many task frameworks (make, npm, cargo, .vscode/tasks.json, etc)
+  use({ "stevearc/overseer.nvim" })
 
-  -- snippets
-  use({ "L3MON4D3/LuaSnip" }) --snippet engine
-  use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
-  -- LSP
-  use({ "neovim/nvim-lspconfig" }) -- enable LSP
-  use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
-  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  -- ZERO LSP
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
+
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lua" },
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
+    }
+  }
+  -- LSP Loading status
+  --[[ use({ 'arkav/lualine-lsp-progress'}) ]]
+  use({ "j-hui/fidget.nvim" })
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
@@ -90,7 +111,6 @@ return packer.startup(function(use)
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter" })
-  use({ "nvim-treesitter/nvim-treesitter-context" })
   use({ "windwp/nvim-ts-autotag" })
 
   -- Git
