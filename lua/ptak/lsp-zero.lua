@@ -57,7 +57,12 @@ luasnip.filetype_extend("javascript", { "javascriptreact" });
 luasnip.filetype_extend("javascript", { "typescript" });
 luasnip.filetype_extend("typescript", { "javascript" });
 
+local navic = require("nvim-navic")
+
 lsp.on_attach(function(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
+  end
   --[[ local opts = { buffer = bufnr, remap = false } ]]
   local keymap = vim.keymap.set
   local opts = { noremap = true, silent = true }
