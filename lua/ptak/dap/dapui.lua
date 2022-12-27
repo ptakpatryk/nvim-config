@@ -1,12 +1,4 @@
-local status_ok, dapui = pcall(require, "dapui")
-if not status_ok then
-  return
-end
-
-local dap_status_ok, dap = pcall(require, "dap")
-if not dap_status_ok then
-  return
-end
+local dap, dapui = require("dap"), require("dapui")
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
@@ -17,7 +9,6 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
-
 
 dapui.setup({
   icons = { expanded = "", collapsed = "", current_frame = "" },
@@ -99,16 +90,3 @@ dapui.setup({
     max_value_lines = 100, -- Can be integer or nil.
   }
 })
-
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-
-keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<Leader>b", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<Leader>B", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<Leader>lp", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
-keymap("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
-keymap("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", opts)

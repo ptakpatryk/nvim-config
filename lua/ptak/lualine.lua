@@ -3,10 +3,32 @@ if not status_ok then
   return
 end
 
+local navic = require("nvim-navic")
+
+local theme = function()
+  local colors = {
+    darkgray = "#16161d",
+    gray = "#ffffff",
+    innerbg = nil,
+    outerbg = "#16161D",
+    normal = "#7e9cd8",
+    insert = "#98bb6c",
+    visual = "#ffa066",
+    replace = "#e46876",
+    command = "#e6c384",
+  }
+  return {
+    normal = {
+      c = { fg = colors.gray, bg = colors.innerbg },
+    },
+  }
+end
+
+
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'tokyonight',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -39,7 +61,8 @@ lualine.setup {
     lualine_z = {}
   },
   tabline = {},
-  winbar = {},
+  winbar = { lualine_c = { { navic.get_location, cond = navic.is_available } } },
   inactive_winbar = {},
   extensions = {}
 }
+

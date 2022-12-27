@@ -59,12 +59,23 @@ return packer.startup(function(use)
   use({ 'akinsho/bufferline.nvim' })
   use({ 'styled-components/vim-styled-components' })
 
+  -- winbar
+  use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
+
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })
   use({ "lukas-reineke/indent-blankline.nvim" })
 
   -- Debugger
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap"  }})
+  use({ "mfussenegger/nvim-dap" })
+  use({ "rcarriga/nvim-dap-ui" })
+  use({ "theHamsta/nvim-dap-virtual-text" })
+  use({ "nvim-telescope/telescope-dap.nvim" })
+  use({ "mxsdev/nvim-dap-vscode-js" })
+  use({ "HUAHUAI23/telescope-dapzzzz" })
+  -- Built-in support for many task frameworks (make, npm, cargo, .vscode/tasks.json, etc)
+  use({ "stevearc/overseer.nvim" })
+
 
   -- ZERO LSP
   use {
@@ -100,7 +111,6 @@ return packer.startup(function(use)
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter" })
-  use({ "nvim-treesitter/nvim-treesitter-context" })
   use({ "windwp/nvim-ts-autotag" })
 
   -- Git
