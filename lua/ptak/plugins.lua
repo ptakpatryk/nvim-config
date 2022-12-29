@@ -101,7 +101,7 @@ return packer.startup(function(use)
   }
   -- LSP Loading status
   --[[ use({ 'arkav/lualine-lsp-progress'}) ]]
-  use({ "j-hui/fidget.nvim" })
+  use({ "j-hui/fidget.nvim" }) -- spinner for lsp progress
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })

@@ -54,7 +54,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("i", "<C-q>", "actions.smart_add_to_qflist + actions.open_qflist", opts)
 keymap("n", "<leader>n", ":Telescope neoclip unnamed extra=plus<CR>", opts)
-
 -- Undotree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>:UndotreeFocus<CR>", opts)
 
@@ -63,3 +62,6 @@ keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
 
 -- Toggle highlight
 keymap("n", "<leader>h", ":set invhlsearch<CR>", opts)
+
+-- Toggle highlight
+keymap("n", "<leader>x", ":let @/=expand('<cword>')<cr>cgn", opts)
