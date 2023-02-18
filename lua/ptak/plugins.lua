@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use({ 'goolord/alpha-nvim' })
   use({ 'akinsho/bufferline.nvim' })
   use({ 'styled-components/vim-styled-components' })
+  use({ 'b0o/schemastore.nvim' }) -- JSON SCHEMAS
 
   -- winbar
   use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
@@ -102,6 +103,9 @@ return packer.startup(function(use)
   -- LSP Loading status
   --[[ use({ 'arkav/lualine-lsp-progress'}) ]]
   use({ "j-hui/fidget.nvim" }) -- spinner for lsp progress
+
+  -- Folding
+  use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' })
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })

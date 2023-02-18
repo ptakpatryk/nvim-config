@@ -24,6 +24,9 @@ local theme = function()
   }
 end
 
+local function icon()
+  return [[🦉]]
+end
 
 lualine.setup {
   options = {
@@ -61,8 +64,7 @@ lualine.setup {
     lualine_z = {}
   },
   tabline = {},
-  winbar = { lualine_c = { { navic.get_location, cond = navic.is_available } } },
+  winbar = { lualine_c = { icon, { navic.get_location, cond = navic.is_available } } },
   inactive_winbar = {},
   extensions = {}
 }
-

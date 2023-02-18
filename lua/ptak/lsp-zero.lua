@@ -47,17 +47,26 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'eslint',
   'tsserver',
-  'sumneko_lua',
   'rust_analyzer'
 })
 
 lsp.nvim_workspace()
 
-luasnip.filetype_extend("javascript", { "javascriptreact" });
-luasnip.filetype_extend("javascript", { "typescript" });
+luasnip.filetype_extend("javascript", { "javascriptreact", "typescript" });
 luasnip.filetype_extend("typescript", { "javascript" });
+luasnip.filetype_extend("typescriptreact", { "typescript", "javascript" })
+luasnip.filetype_extend("javascriptreact", { "javascript" })
 
 local navic = require("nvim-navic")
+
+lsp.configure('jsonls', {
+settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  }
+})
 
 lsp.on_attach(function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
@@ -68,8 +77,9 @@ lsp.on_attach(function(client, bufnr)
   local opts = { noremap = true, silent = true }
 
   if client.name == "eslint" then
-    keymap("n", "<leader>ff", ":EslintFixAll<CR>", opts)
+    keymap("n", "<leader>ff", ":EslintFixAll<CR>:lua vim.lsp.buf.format()<CR>", opts)
     return
+  elseif client.name == "l" then
   end
 
   keymap("n", "gd", vim.lsp.buf.definition, opts)

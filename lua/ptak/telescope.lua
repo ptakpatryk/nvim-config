@@ -7,13 +7,11 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules" },
     dynamic_preview_title = true,
-
     mappings = {
       i = {
         ["<Down>"] = actions.cycle_history_next,
@@ -22,20 +20,23 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
-    pickers = {
-      live_grep = {
-        additional_args = function()
-          return {"--hidden"}
-        end
-      },
+  },
+  pickers = {
+    live_grep = {
+      additional_args = function()
+        return { "--hidden" }
+      end,
+    },
+    find_files = {
+      find_command = { 'rg', '--files', '--hidden', '-g', '!.env.*' },
     },
   },
   extensions = {
     fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     }
   }
 }
@@ -43,4 +44,4 @@ telescope.setup {
 telescope.load_extension('fzf')
 telescope.load_extension('neoclip')
 telescope.load_extension('dap')
-telescope.load_extension('i23')
+--[[ telescope.load_extension('i23') ]]

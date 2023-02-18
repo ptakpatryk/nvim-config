@@ -48,9 +48,11 @@ keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- Alt + k
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope
-keymap("n", "<leader>p", ":Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<leader>p", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>F", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>fo", ":Telescope oldfiles<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("i", "<C-q>", "actions.smart_add_to_qflist + actions.open_qflist", opts)
 keymap("n", "<leader>n", ":Telescope neoclip unnamed extra=plus<CR>", opts)
@@ -63,5 +65,5 @@ keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
 -- Toggle highlight
 keymap("n", "<leader>h", ":set invhlsearch<CR>", opts)
 
--- Toggle highlight
+-- Change next occurence
 keymap("n", "<leader>x", ":let @/=expand('<cword>')<cr>cgn", opts)
