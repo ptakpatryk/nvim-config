@@ -40,3 +40,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 --[[ vim.opt.foldlevel = 50 ]]
 --[[ vim.opt.foldmethod = "indent" ]]
 --[[ vim.opt.foldexpr = "nvim_treesitter#foldexpr()" ]]
+
+-- NVIM TREE REQUIRED
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

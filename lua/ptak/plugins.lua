@@ -25,6 +25,7 @@ vim.cmd([[
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
+
 if not status_ok then
   return
 end
@@ -43,9 +44,9 @@ return packer.startup(function(use)
   -- My plugins here
 
   use({ 'wbthomason/packer.nvim' }) -- Have packer manage itself
-  use({ 'nvim-lua/plenary.nvim' }) -- Useful lua functions used by lots of plugins
-  use({ 'RRethy/vim-illuminate' }) -- illuminates other keywords when cursor is hovering over
-  use({ 'windwp/nvim-autopairs' }) -- Autopairs, integrates with both cmp and treesitter
+  use({ 'nvim-lua/plenary.nvim' })  -- Useful lua functions used by lots of plugins
+  use({ 'RRethy/vim-illuminate' })  -- illuminates other keywords when cursor is hovering over
+  use({ 'windwp/nvim-autopairs' })  -- Autopairs, integrates with both cmp and treesitter
   use({ 'numToStr/Comment.nvim' })
   use({ 'JoosepAlviste/nvim-ts-context-commentstring' })
   use({ 'kyazdani42/nvim-web-devicons' })
@@ -119,6 +120,9 @@ return packer.startup(function(use)
 
   -- Git
   use({ "lewis6991/gitsigns.nvim" })
+
+  -- IMPORT COST
+  use({ "barrett-ruth/import-cost.nvim", run = 'sh install.sh yarn' })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
