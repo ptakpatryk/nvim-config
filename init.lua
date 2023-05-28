@@ -21,4 +21,4 @@ require "ptak.overseer"
 require "ptak.alpha"
 require "ptak.indent_blankline"
 require "ptak.import_cost"
---[[ require "ptak.ufo" ]]
+require "ptak.spectre"

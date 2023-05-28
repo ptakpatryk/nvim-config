@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--[[ FIX ]]
+
 local plugins = {
   'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
   'RRethy/vim-illuminate', -- illuminates other keywords when cursor is hovering over
@@ -28,6 +30,7 @@ local plugins = {
   'akinsho/bufferline.nvim',
   'styled-components/vim-styled-components',
   'b0o/schemastore.nvim', -- JSON SCHEMAS
+  'nvim-pack/nvim-spectre', -- search/replace panel
 
   -- winbar
   { "SmiteshP/nvim-navic",   dependencies = "neovim/nvim-lspconfig" },
@@ -70,7 +73,6 @@ local plugins = {
     }
   },
   -- LSP Loading status
-  --[[ use({ 'arkav/lualine-lsp-progress'}) ]]
   'j-hui/fidget.nvim', -- spinner for lsp progress
 
   -- Folding

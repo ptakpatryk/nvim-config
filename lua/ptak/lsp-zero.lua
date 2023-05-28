@@ -13,6 +13,8 @@ if not cmp_status_ok then
   return
 end
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -56,6 +58,7 @@ luasnip.filetype_extend("javascript", { "javascriptreact", "typescript" });
 luasnip.filetype_extend("typescript", { "javascript" });
 luasnip.filetype_extend("typescriptreact", { "typescript", "javascript" })
 luasnip.filetype_extend("javascriptreact", { "javascript" })
+
 
 local navic = require("nvim-navic")
 
@@ -103,12 +106,16 @@ lsp.on_attach(function(client, bufnr)
   keymap("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
 
-local cmp_mappings = lsp.defaults.cmp_mappings({
+local cmp_mappings = {
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   ['<C-e>'] = cmp.mapping.abort(),
-})
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
+}
 
-lsp.setup_nvim_cmp({
+
+lsp.setup()
+
+cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -131,15 +138,7 @@ lsp.setup_nvim_cmp({
     { name = "buffer" },
     { name = "path" },
   },
-  --[[ window = { ]]
-  --[[   documentation = cmp.config.window.bordered(), ]]
-  --[[   completion = cmp.config.window.bordered(), ]]
-  --[[   winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None', ]]
-  --[[ } ]]
 })
-
-
-lsp.setup()
 
 vim.diagnostic.config({
   virtual_text = {
