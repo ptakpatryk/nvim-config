@@ -14,6 +14,7 @@ if not cmp_status_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/ptak/snippets" }})
 
 local kind_icons = {
   Text = "",

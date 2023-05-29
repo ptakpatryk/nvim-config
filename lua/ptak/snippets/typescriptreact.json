@@ -1,0 +1,18 @@
+{
+   "reactArrowFunctionComponent": {
+    "prefix": "raft",
+    "body": [
+      "type ${1:${TM_FILENAME_BASE}}Props = {",
+      "",
+      "};",
+      "",
+      "export const ${1:first} = ({}: ${1:first}Props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Arrow Function Component with TypeScript Props"
+  }
+}
