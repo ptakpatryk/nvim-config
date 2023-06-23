@@ -48,8 +48,6 @@ local kind_icons = {
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-  'eslint',
-  'tsserver',
   'rust_analyzer'
 })
 
