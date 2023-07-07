@@ -29,7 +29,7 @@ local plugins = {
   'goolord/alpha-nvim',
   'akinsho/bufferline.nvim',
   'styled-components/vim-styled-components',
-  'b0o/schemastore.nvim', -- JSON SCHEMAS
+  'b0o/schemastore.nvim',   -- JSON SCHEMAS
   'nvim-pack/nvim-spectre', -- search/replace panel
 
   -- winbar
@@ -73,7 +73,7 @@ local plugins = {
     }
   },
   -- LSP Loading status
-  'j-hui/fidget.nvim', -- spinner for lsp progress
+  { 'j-hui/fidget.nvim', tag = 'legacy' }, -- spinner for lsp progress
 
   -- Folding
   { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
