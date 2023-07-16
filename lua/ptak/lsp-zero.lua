@@ -14,7 +14,7 @@ if not cmp_status_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/ptak/snippets" }})
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/ptak/snippets" } })
 
 local kind_icons = {
   Text = "",
@@ -48,7 +48,12 @@ local kind_icons = {
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-  'rust_analyzer'
+  'rust_analyzer',
+  'eslint',
+  'jsonls',
+  'lua_ls',
+  'tsserver',
+  'yamlls'
 })
 
 lsp.nvim_workspace()
