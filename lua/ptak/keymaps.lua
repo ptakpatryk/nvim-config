@@ -67,3 +67,4 @@ keymap("n", "<leader>h", ":set invhlsearch<CR>", opts)
 
 -- Change next occurence
 keymap("n", "<leader>x", ":let @/=expand('<cword>')<cr>cgn", opts)
+keymap("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", opts)
