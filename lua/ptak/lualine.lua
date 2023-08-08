@@ -64,7 +64,7 @@ lualine.setup {
     lualine_z = {}
   },
   tabline = {},
-  winbar = { lualine_c = { icon, { navic.get_location, cond = navic.is_available } } },
+  winbar = { lualine_c = { "navic" }, lualine_b = { icon } },
   inactive_winbar = {},
   extensions = {}
 }
