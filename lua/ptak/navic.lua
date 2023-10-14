@@ -27,7 +27,7 @@ navic.setup {
     Struct = ' ',
     Event = ' ',
     Operator = ' ',
-    TypeParameter = ' '
+    TypeParameter = '󰊄'
   },
   highlight = true,
   separator = " > ",
