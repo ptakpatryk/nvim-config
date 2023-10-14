@@ -37,7 +37,7 @@ local plugins = {
 
   -- Colorschemes
   'folke/tokyonight.nvim',
-  'lukas-reineke/indent-blankline.nvim',
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   -- Debugger
   'mfussenegger/nvim-dap',
