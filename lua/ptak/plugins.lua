@@ -33,11 +33,11 @@ local plugins = {
   'nvim-pack/nvim-spectre', -- search/replace panel
 
   -- winbar
-  { "SmiteshP/nvim-navic",   dependencies = "neovim/nvim-lspconfig" },
+  { "SmiteshP/nvim-navic",                 dependencies = "neovim/nvim-lspconfig" },
 
   -- Colorschemes
   'folke/tokyonight.nvim',
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",                          opts = {} },
 
   -- Debugger
   'mfussenegger/nvim-dap',
@@ -74,7 +74,7 @@ local plugins = {
     }
   },
   -- LSP Loading status
-  { 'j-hui/fidget.nvim', tag = 'legacy' }, -- spinner for lsp progress
+  { 'j-hui/fidget.nvim',     tag = 'legacy' }, -- spinner for lsp progress
 
   -- Folding
   { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
@@ -93,7 +93,10 @@ local plugins = {
   'lewis6991/gitsigns.nvim',
 
   -- IMPORT COST
-  { 'barrett-ruth/import-cost.nvim', build = 'sh install.sh yarn' }
+  { 'barrett-ruth/import-cost.nvim', build = 'sh install.sh yarn' },
+
+  -- harpoon
+  'ThePrimeagen/harpoon'
 }
 
 local opts = {}
