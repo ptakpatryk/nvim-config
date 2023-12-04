@@ -84,9 +84,8 @@ local plugins = {
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'AckslD/nvim-neoclip.lua',                  dependencies = { 'nvim-telescope/telescope.nvim' } },
 
-
   -- Treesitter
-  'nvim-treesitter/nvim-treesitter',
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects'} },
   'windwp/nvim-ts-autotag',
 
   -- Git
