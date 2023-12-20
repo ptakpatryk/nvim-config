@@ -102,7 +102,7 @@ lsp_zero.on_attach(function(client, bufnr)
   if client.name == "eslint" then
     client.server_capabilities.documentFormattingProvider = true
     --[[ keymap("n", "<leader>ff", ":EslintFixAll<CR>:lua vim.lsp.buf.format()<CR>", opts) ]]
-    --[[ keymap("n", "<leader>ff", ":EslintFixAll<CR>", opts) ]]
+    keymap("n", "<leader>ff", ":EslintFixAll<CR>", opts)
     return
   elseif client.name == "l" then
   end

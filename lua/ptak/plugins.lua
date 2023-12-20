@@ -36,8 +36,8 @@ local plugins = {
   { "SmiteshP/nvim-navic",                 dependencies = "neovim/nvim-lspconfig" },
 
   -- Colorschemes
-  'folke/tokyonight.nvim',
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",                          opts = {} },
+  { 'folke/tokyonight.nvim',               commit = "e1e8ff2c8ff2bdc90ce35697291a5917adc8db5c" },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                       opts = {} },
 
   -- Debugger
   'mfussenegger/nvim-dap',
@@ -85,7 +85,7 @@ local plugins = {
   { 'AckslD/nvim-neoclip.lua',                  dependencies = { 'nvim-telescope/telescope.nvim' } },
 
   -- Treesitter
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects'} },
+  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate',                               dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' } },
   'windwp/nvim-ts-autotag',
 
   -- Git
