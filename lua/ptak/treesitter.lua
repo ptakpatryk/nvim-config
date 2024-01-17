@@ -5,10 +5,10 @@ end
 
 configs.setup({
   ensure_installed = "all", -- one of "all" or a list of languages
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  ignore_install = { "" },  -- List of parsers to ignore installing
   highlight = {
-    enable = true,         -- false will disable the whole extension
-    disable = { "css" },   -- list of language that will be disabled
+    enable = true,          -- false will disable the whole extension
+    disable = { "css" },    -- list of language that will be disabled
   },
   autopairs = {
     enable = true,
@@ -26,9 +26,6 @@ configs.setup({
       node_decremental = "grm",
     },
   },
-})
-
-require'nvim-treesitter.configs'.setup {
   textobjects = {
     select = {
       enable = true,
@@ -56,7 +53,7 @@ require'nvim-treesitter.configs'.setup {
       -- mapping query_strings to modes.
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
       -- If you set this to `true` (default is `false`) then any textobject is
@@ -70,5 +67,5 @@ require'nvim-treesitter.configs'.setup {
       -- and should return true of false
       include_surrounding_whitespace = true,
     }
-  },
-}
+  }
+})
