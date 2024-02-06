@@ -85,7 +85,7 @@ local plugins = {
   { 'AckslD/nvim-neoclip.lua',                  dependencies = { 'nvim-telescope/telescope.nvim' } },
 
   -- Treesitter
-  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate',                               dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' } },
+  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate',                               dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', commit = "bb020f6" }, commit = "2c1eb02e92734406866b993bd87111891830455b" },
   'windwp/nvim-ts-autotag',
 
   -- Git
