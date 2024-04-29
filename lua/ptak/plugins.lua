@@ -37,11 +37,11 @@ local plugins = {
 
   -- Colorschemes
   { 'folke/tokyonight.nvim',               commit = "e1e8ff2c8ff2bdc90ce35697291a5917adc8db5c" },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                       opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                       opts = {} },
 
   -- Debugger
+  { "rcarriga/nvim-dap-ui",                dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   'mfussenegger/nvim-dap',
-  'rcarriga/nvim-dap-ui',
   'theHamsta/nvim-dap-virtual-text',
   'nvim-telescope/telescope-dap.nvim',
   'mxsdev/nvim-dap-vscode-js',
