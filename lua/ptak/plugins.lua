@@ -36,7 +36,7 @@ local plugins = {
   { "SmiteshP/nvim-navic",                 dependencies = "neovim/nvim-lspconfig" },
 
   -- Colorschemes
-  { 'folke/tokyonight.nvim',               commit = "e1e8ff2c8ff2bdc90ce35697291a5917adc8db5c" },
+  { 'folke/tokyonight.nvim' },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                       opts = {} },
 
   -- Debugger
@@ -85,7 +85,7 @@ local plugins = {
   { 'AckslD/nvim-neoclip.lua',                  dependencies = { 'nvim-telescope/telescope.nvim' } },
 
   -- Treesitter
-  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate',                               dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', commit = "bb020f6" }, commit = "2c1eb02e92734406866b993bd87111891830455b" },
+  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate',                               dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' } },
   'windwp/nvim-ts-autotag',
 
   -- Git
@@ -95,7 +95,18 @@ local plugins = {
   { 'barrett-ruth/import-cost.nvim', build = 'sh install.sh yarn' },
 
   -- harpoon
-  'ThePrimeagen/harpoon'
+  'ThePrimeagen/harpoon',
+
+  -- linter
+  'mfussenegger/nvim-lint',
+  'mhartington/formatter.nvim',
+  {
+    "nvimdev/guard.nvim",
+    -- Builtin configuration, optional
+    dependencies = {
+      "nvimdev/guard-collection",
+    },
+  }
 }
 
 local opts = {}

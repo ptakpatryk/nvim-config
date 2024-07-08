@@ -20,7 +20,6 @@ require "ptak.navic"
 require "ptak.overseer"
 require "ptak.alpha"
 require "ptak.indent_blankline"
---[[ require "ptak.import_cost" ]]
 require "ptak.spectre"
 require "ptak.harpoon"
 require "ptak.autotag"
