@@ -60,7 +60,7 @@ require("mason-lspconfig").setup {
     'eslint',
     'jsonls',
     'lua_ls',
-    'tsserver',
+    'ts_ls',
     'yamlls'
   },
   handlers = {
@@ -103,6 +103,7 @@ lsp_zero.on_attach(function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = true
     --[[ keymap("n", "<leader>ff", ":EslintFixAll<CR>:lua vim.lsp.buf.format()<CR>", opts) ]]
     keymap("n", "<leader>ff", ":EslintFixAll<CR>", opts)
+    keymap("n", "<leader>fd", ":lua vim.lsp.buf.format()<CR>", opts)
     return
   elseif client.name == "l" then
   end
