@@ -36,6 +36,7 @@ vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applicati
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.jumpoptions = "" -- allows jumping to closed buffers ("clean" is default option since v0.10.0)
 --[[ vim.opt.iskeyword:append("-") ]]
 --[[ vim.opt.foldlevel = 50 ]]
 --[[ vim.opt.foldmethod = "indent" ]]
