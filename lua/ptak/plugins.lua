@@ -106,7 +106,10 @@ local plugins = {
     dependencies = {
       "nvimdev/guard-collection",
     },
-  }
+  },
+
+  --[[color highlight (hex values etc.)]]
+  'brenoprata10/nvim-highlight-colors'
 }
 
 local opts = {}
