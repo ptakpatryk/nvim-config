@@ -121,6 +121,7 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
+      local color_item = require("nvim-highlight-colors").format(entry, { kind = vim_item.kind })
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
@@ -130,6 +131,12 @@ cmp.setup({
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
+
+      if color_item.abbr_hl_group then
+        vim_item.kind_hl_group = color_item.abbr_hl_group
+        vim_item.kind = color_item.abbr
+      end
+
       return vim_item
     end,
   },
