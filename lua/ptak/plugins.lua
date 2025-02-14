@@ -25,10 +25,22 @@ local plugins = {
   'moll/vim-bbye',
   'nvim-lualine/lualine.nvim',
   'tpope/vim-surround',
-  'simrat39/rust-tools.nvim',
   'goolord/alpha-nvim',
-  'akinsho/bufferline.nvim',
-  'styled-components/vim-styled-components',
+  {
+    'akinsho/bufferline.nvim',
+    keys = {
+      { "<leader>bP", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle Pin" },
+      { "<leader>bc", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+      { "<leader>br", "<Cmd>BufferLineCloseRight<CR>",           desc = "Delete Buffers to the Right" },
+      { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",            desc = "Delete Buffers to the Left" },
+      { "<S-h>",      "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev Buffer" },
+      { "<S-l>",      "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
+      { "[b",         "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev Buffer" },
+      { "]b",         "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
+      { "[B",         "<cmd>BufferLineMovePrev<cr>",             desc = "Move buffer prev" },
+      { "]B",         "<cmd>BufferLineMoveNext<cr>",             desc = "Move buffer next" },
+    },
+  },
   'b0o/schemastore.nvim',   -- JSON SCHEMAS
   'nvim-pack/nvim-spectre', -- search/replace panel
 
@@ -91,22 +103,19 @@ local plugins = {
   -- Git
   'lewis6991/gitsigns.nvim',
 
-  -- IMPORT COST
-  { 'barrett-ruth/import-cost.nvim', build = 'sh install.sh yarn' },
-
   -- harpoon
   'ThePrimeagen/harpoon',
 
   -- linter
-  'mfussenegger/nvim-lint',
-  'mhartington/formatter.nvim',
-  {
-    "nvimdev/guard.nvim",
-    -- Builtin configuration, optional
-    dependencies = {
-      "nvimdev/guard-collection",
-    },
-  },
+  --[[ 'mfussenegger/nvim-lint', ]]
+  --[[ 'mhartington/formatter.nvim', ]]
+  --[[ { ]]
+  --[[   "nvimdev/guard.nvim", ]]
+  --[[   -- Builtin configuration, optional ]]
+  --[[   dependencies = { ]]
+  --[[     "nvimdev/guard-collection", ]]
+  --[[   }, ]]
+  --[[ }, ]]
 
   --[[color highlight (hex values etc.)]]
   'brenoprata10/nvim-highlight-colors'
