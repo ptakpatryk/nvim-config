@@ -106,6 +106,98 @@ local plugins = {
   -- harpoon
   'ThePrimeagen/harpoon',
 
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "github/copilot.vim" },                       -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+    },
+    build = "make tiktoken",                          -- Only on MacOS or Linux
+    opts = {
+      -- See Configuration section for options
+    },
+    keys = {
+      -- Show prompts actions with telescope
+      {
+        "<leader>ap",
+        function()
+          require("CopilotChat").select_prompt({
+            context = {
+              "buffers",
+            },
+          })
+        end,
+        desc = "CopilotChat - Prompt actions",
+      },
+      {
+        "<leader>ap",
+        function()
+          require("CopilotChat").select_prompt()
+        end,
+        mode = "x",
+        desc = "CopilotChat - Prompt actions",
+      },
+      -- Code related commands
+      { "<leader>ae", "<cmd>CopilotChatExplain<cr>",       desc = "CopilotChat - Explain code" },
+      { "<leader>at", "<cmd>CopilotChatTests<cr>",         desc = "CopilotChat - Generate tests" },
+      { "<leader>ar", "<cmd>CopilotChatReview<cr>",        desc = "CopilotChat - Review code" },
+      { "<leader>aR", "<cmd>CopilotChatRefactor<cr>",      desc = "CopilotChat - Refactor code" },
+      { "<leader>an", "<cmd>CopilotChatBetterNamings<cr>", desc = "CopilotChat - Better Naming" },
+      -- Chat with Copilot in visual mode
+      {
+        "<leader>av",
+        ":CopilotChatVisual",
+        mode = "x",
+        desc = "CopilotChat - Open in vertical split",
+      },
+      {
+        "<leader>ax",
+        ":CopilotChatInline",
+        mode = "x",
+        desc = "CopilotChat - Inline chat",
+      },
+      -- Custom input for CopilotChat
+      {
+        "<leader>ai",
+        function()
+          local input = vim.fn.input("Ask Copilot: ")
+          if input ~= "" then
+            vim.cmd("CopilotChat " .. input)
+          end
+        end,
+        desc = "CopilotChat - Ask input",
+      },
+      -- Generate commit message based on the git diff
+      {
+        "<leader>am",
+        "<cmd>CopilotChatCommit<cr>",
+        desc = "CopilotChat - Generate commit message for all changes",
+      },
+      -- Quick chat with Copilot
+      {
+        "<leader>aq",
+        function()
+          local input = vim.fn.input("Quick Chat: ")
+          if input ~= "" then
+            vim.cmd("CopilotChatBuffer " .. input)
+          end
+        end,
+        desc = "CopilotChat - Quick chat",
+      },
+      -- Fix the issue with diagnostic
+     { "<leader>af", "<cmd>CopilotChatFixError<cr>", desc = "CopilotChat - Fix Diagnostic" },
+      -- Clear buffer and chat history
+      { "<leader>al", "<cmd>CopilotChatReset<cr>",    desc = "CopilotChat - Clear buffer and chat history" },
+      -- Toggle Copilot Chat Vsplit
+      { "<leader>av", "<cmd>CopilotChatToggle<cr>",   desc = "CopilotChat - Toggle" },
+      -- Copilot Chat Models
+      { "<leader>a?", "<cmd>CopilotChatModels<cr>",   desc = "CopilotChat - Select Models" },
+      -- Copilot Chat Agents
+      { "<leader>aa", "<cmd>CopilotChatAgents<cr>",   desc = "CopilotChat - Select Agents" },
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+  },
+
   -- linter
   --[[ 'mfussenegger/nvim-lint', ]]
   --[[ 'mhartington/formatter.nvim', ]]

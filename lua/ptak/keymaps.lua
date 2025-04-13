@@ -72,3 +72,5 @@ keymap("n", "<leader>h", ":set invhlsearch<CR>", opts)
 -- Change next occurence
 keymap("n", "<leader>x", ":let @/=expand('<cword>')<cr>cgn", opts)
 keymap("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", opts)
+keymap("i", "<C-L>", "<Plug>(copilot-accept-word)", opts)
+keymap("i", "<M-C-L>", "<Plug>(copilot-accept-line)", opts)
