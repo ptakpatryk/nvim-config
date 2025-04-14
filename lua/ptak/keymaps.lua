@@ -57,7 +57,7 @@ keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("i", "<C-q>", "actions.smart_add_to_qflist + actions.open_qflist", opts)
 keymap("n", "<leader>n", ":Telescope neoclip unnamed extra=plus<CR>", opts)
 
-keymap("n", "<leader>bl", ":Gitsign blame_line <CR>", opts)
+keymap("n", "<leader>gb", ":Gitsign blame_line <CR>", opts)
 
 -- Undotree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>:UndotreeFocus<CR>", opts)
