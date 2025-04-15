@@ -151,7 +151,7 @@ local plugins = {
         desc = "CopilotChat - Open in vertical split",
       },
       {
-        "<leader>ax",
+        "<leader>ac",
         ":CopilotChatInline",
         mode = "x",
         desc = "CopilotChat - Inline chat",
@@ -185,18 +185,20 @@ local plugins = {
         desc = "CopilotChat - Quick chat",
       },
       -- Fix the issue with diagnostic
-     { "<leader>af", "<cmd>CopilotChatFixError<cr>", desc = "CopilotChat - Fix Diagnostic" },
+      { "<leader>af", "<cmd>CopilotChatFixError<cr>", desc = "CopilotChat - Fix Diagnostic" },
       -- Clear buffer and chat history
       { "<leader>al", "<cmd>CopilotChatReset<cr>",    desc = "CopilotChat - Clear buffer and chat history" },
       -- Toggle Copilot Chat Vsplit
       { "<leader>av", "<cmd>CopilotChatToggle<cr>",   desc = "CopilotChat - Toggle" },
       -- Copilot Chat Models
       { "<leader>a?", "<cmd>CopilotChatModels<cr>",   desc = "CopilotChat - Select Models" },
+
       -- Copilot Chat Agents
       { "<leader>aa", "<cmd>CopilotChatAgents<cr>",   desc = "CopilotChat - Select Agents" },
     },
     -- See Commands section for default commands if you want to lazy load on them
   },
+
 
   -- linter
   --[[ 'mfussenegger/nvim-lint', ]]
@@ -210,7 +212,16 @@ local plugins = {
   --[[ }, ]]
 
   --[[color highlight (hex values etc.)]]
-  'brenoprata10/nvim-highlight-colors'
+  'brenoprata10/nvim-highlight-colors',
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "echasnovski/mini.icons" },
+    opts = {}
+  },
+  { "github/copilot.vim", lazy = false }
 }
 
 local opts = {}
