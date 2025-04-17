@@ -141,21 +141,21 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    --[[ ['<Tab>'] = cmp_action.luasnip_supertab(), ]]
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif require('luasnip').expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-      elseif vim.b._copilot_suggestion ~= nil then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes(vim.fn['copilot#Accept'](), true, true, true), '')
-      else
-        fallback()
-      end
-    end, {
-      'i',
-      's',
-    }),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    --[[ ['<Tab>'] = cmp.mapping(function(fallback) ]]
+    --[[   if cmp.visible() then ]]
+    --[[     cmp.select_next_item() ]]
+    --[[   elseif require('luasnip').expand_or_jumpable() then ]]
+    --[[     vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '') ]]
+    --[[   elseif vim.b._copilot_suggestion ~= nil then ]]
+    --[[     vim.fn.feedkeys(vim.api.nvim_replace_termcodes(vim.fn['copilot#Accept'](), true, true, true), '') ]]
+    --[[   else ]]
+    --[[     fallback() ]]
+    --[[   end ]]
+    --[[ end, { ]]
+    --[[   'i', ]]
+    --[[   's', ]]
+    --[[ }), ]]
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ['<C-e>'] = cmp.mapping.abort(),

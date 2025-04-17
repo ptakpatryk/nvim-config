@@ -18,10 +18,10 @@ keymap("i", "<C+c>", "<Esc>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+--[[ keymap("n", "<C-h>", "<C-w>h", opts) ]]
+--[[ keymap("n", "<C-j>", "<C-w>j", opts) ]]
+--[[ keymap("n", "<C-k>", "<C-w>k", opts) ]]
+--[[ keymap("n", "<C-l>", "<C-w>l", opts) ]]
 
 -- Resize with arrows (doesnt work on mac tho...)
 keymap("n", "<A-Up>", ":resize +2<CR>", opts)
@@ -74,6 +74,7 @@ keymap("n", "<leader>x", ":let @/=expand('<cword>')<cr>cgn", opts)
 keymap("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", opts)
 keymap("i", "<C-L>", "<Plug>(copilot-accept-word)", opts)
 keymap("i", "<M-C-L>", "<Plug>(copilot-accept-line)", opts)
+keymap("i", "<C-J>", 'copilot#Accept("<CR>")', {expr = true, silent = true})
 
 keymap("n", "<leader>r", ":lua require('telescope').extensions.refactoring.refactors()<CR>", opts)
 
